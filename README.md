@@ -85,7 +85,7 @@ rata-rata durasi waktu = output (total semua durasi/ total sumber data belajar)
 pilih (1-8) : input
 // bahasanya seadanya dlu aja ya, nanti gampang diubah"
 
-## pilih 1
+## 2, pilih 1
 //nampilin semua datanya
 ========================================================================================================.
 ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
@@ -99,7 +99,7 @@ ID        JUDUl                       KATEGORI                TINGKAT KESULITAN 
 //dst
 
 
-## pilih 2
+## 2, pilih 2
 DATA SUMBER BELAJAR DENGAN RATING TERTINGGI
 ========================================================================================================.
 ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
@@ -114,7 +114,7 @@ ID        JUDUl                       KATEGORI                TINGKAT KESULITAN 
  5        AVM                         Catatan                 Sedang                 1         50
 
 
-## pilih 3
+## 2, pilih 3
 DATA SUMBER BELAJAR DENGAN DURASI WAKTU TERPANJANG
 ========================================================================================================.
 ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
@@ -128,7 +128,7 @@ ID        JUDUl                       KATEGORI                TINGKAT KESULITAN 
  2        AVM                         Catatan                 Sedang                 5         10
 
 
-## pilih 4
+## 2, pilih 4
 TINGKAT KESULITAN : MUDAH
 ========================================================================================================.
 ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
@@ -151,11 +151,11 @@ ID        JUDUl                       KATEGORI                TINGKAT KESULITAN 
  3        Matdis                      Online Course           Sulit                  3.5       32
 
 
-## pilih 5
+## 2, pilih 5
 // jujur belum kepikiran
 // paling kaya kita bikin rumus nya gitu, kaya dengan rating tertinggi dan waktu terpendek
 
-## pilih 6
+## 2, pilih 6
 DATA SUMBER BELAJAR URUT RATING
 ========================================================================================================.
 ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
@@ -167,7 +167,7 @@ ID        JUDUl                       KATEGORI                TINGKAT KESULITAN 
  2        AVM                         Catatan                 Sedang                 5         10
  4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
  
-## pilih 7
+## 2, pilih 7
 DATA SUMBER BELAJAR URUT DURASI WAKTU
 ========================================================================================================.
 ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
@@ -180,17 +180,17 @@ ID        JUDUl                       KATEGORI                TINGKAT KESULITAN 
  5        AVM                         Catatan                 Sedang                 1         50
 
 //ATAU BISA JUGA
-## pilih 6 atau pilih 7
+## 2, pilih 6 atau pilih 7
 ==== Urut =====
 1. Ascending
 2. Descending
 3. Kembali
 ===============
 pilih (1-3) :
-//terus lanjut kaya disebelumnya dengan tambahan (ASCENDING) / (DESCENDING) -> sesuai dengan pilihan user
+//terus lanjut kaya disebelumnya dengan tambahan tulisan " (ASCENDING) / (DESCENDING) " -> sesuai dengan input
 
 
-## pilih 8 //fitur tantangan, dipikir terakhir aja
+## 2, pilih 8 //fitur tantangan, dipikir terakhir aja
 Berapa durasi waktu belajar yang anda miliki : input
 
 Durasi = 30
@@ -214,7 +214,7 @@ ID        JUDUl                       KATEGORI                TINGKAT KESULITAN 
 pilih (1-4) :
 
 
-# pilih 1
+## 3, pilih 1
 ID : input
 
 ID = 3
@@ -224,7 +224,7 @@ ID        JUDUl                       KATEGORI                TINGKAT KESULITAN 
  3        Matdis                      Online Course           Sulit                  3.5       32
 
 
-# pilih 2
+## 3, pilih 2
 Judul : input
 
 Judul = AVM
@@ -234,7 +234,7 @@ ID        JUDUl                       KATEGORI                TINGKAT KESULITAN 
  2        AVM                         Catatan                 Sedang                 5         10
 
 
-# pilih 3
+## 3, pilih 3
 ==== Kategori ====
 1. buku
 2. catatan

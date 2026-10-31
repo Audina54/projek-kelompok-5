@@ -31,6 +31,20 @@ pengguna memasukkan waktu belajar yang tersedia, lalu program menampilkan sumber
 •	Rating (1-5)
 •	Estimasi waktu belajar (menit)
 
+
+//misal data semuanya
+========================================================================================================.
+ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
+========================================================================================================.
+ 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
+ 2        AVM                         Catatan                 Sedang                 5         10
+ 3        Matdis                      Online Course           Sulit                  3.5       32
+ 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
+ 5        AVM                         Catatan                 Sedang                 1         50
+ 6        Matdis                      Online Course           Mudah                  3.5       17
+//dst
+
+
 # MENU
 ============= Menu =============
 1. Menambah data sumber belajar
@@ -43,6 +57,7 @@ pilih (1-4) :
 
 
 # PILIH 1
+===== Menambah data sumber belajar =====
 Judul : input
 
 ==== Kategori ==== 
@@ -71,33 +86,82 @@ Durasi belajar (menit) = input
 rata-rata rating       = output (total semua rating/ total sumber data belajar)
 rata-rata durasi waktu = output (total semua durasi/ total sumber data belajar)
 
-====== Menampilkan Data =======
-1. Tampilkan seluruh data sumber belajar
-2. Tampilkan data sumber belajar dengan rating tertinggi dan terendah
-3. Tampilkan data sumber belajar dengan durasi terpanjang dan terpendek
-4. Tampilkan data sumber belajar (terkelompok tingkat kesulitan)
-5. Tampilkan data sumber belajar yang terekomendasi
-6. Tampilkan data sumber belajar terurut (rating)
-7. Tampilkan data sumber belajar terurut (durasi waktu)
-8. Tampilkan data sumber belajar berdasarkan durasi belajar yang dimiliki //ini fitur tantangan
-9. Kembali
-================================.
-pilih (1-8) : input
+====== Menampilkan Data Sumber Belajar =======
+1. Tampilkan seluruh data
+2. Tampilkan data dengan rating tertinggi dan terendah
+3. Tampilkan data dengan durasi terpanjang dan terpendek
+4. Tampilkan data yang terekomendasi //Menggunakan IF untuk mengelompokkan tingkat kesulitan atau rekomendasi penggunaan -> jujur kaya bingung gitu deh rekomendasi penggunaan maksudnya kaya gimana
+5. Tampilkan data berdasarkan durasi belajar yang dimiliki //ini fitur tantangan
+6. Kembali
+===============================================.
+pilih (1-6) : input
 // bahasanya seadanya dlu aja ya, nanti gampang diubah"
 
 ## 2, pilih 1
-//nampilin semua datanya
+======= Tampilkan Seluruh Data =======
+1. Tampilkan data (terkelompok tingkat kesulitan)
+2. Tampilkan data urut rating
+3. Tampilkan data urut durasi waktu
+4. Kembali
+===================================.
+pilih (1-4) : input
+
+### 2, 1, pilih 1
+SUMBER BELAJAR TERKELOMPOK TINGKAT KESULITAN
+TINGKAT KESULITAN : MUDAH
+========================================================================================================.
+ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
+========================================================================================================.
+ 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
+ 6        Matdis                      Online Course           Mudah                  3.5       17
+
+TINGKAT KESULITAN : SEDANG
+========================================================================================================.
+ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
+========================================================================================================.
+ 2        AVM                         Catatan                 Sedang                 5         10
+ 5        AVM                         Catatan                 Sedang                 1         50
+
+TINGKAT KESULITAN : SULIT
 ========================================================================================================.
 ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
 ========================================================================================================.
  1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
- 2        AVM                         Catatan                 Sedang                 5         10
  3        Matdis                      Online Course           Sulit                  3.5       32
- 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
+
+### 2, 1, pilih 2
+DATA SUMBER BELAJAR URUT RATING
+========================================================================================================.
+ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
+========================================================================================================.
  5        AVM                         Catatan                 Sedang                 1         50
  6        Matdis                      Online Course           Mudah                  3.5       17
-//dst
+ 3        Matdis                      Online Course           Sulit                  3.5       32
+ 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
+ 2        AVM                         Catatan                 Sedang                 5         10
+ 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
+ 
+## 2, 1, pilih 3
+DATA SUMBER BELAJAR URUT DURASI WAKTU
+========================================================================================================.
+ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
+========================================================================================================.
+ 2        AVM                         Catatan                 Sedang                 5         10
+ 6        Matdis                      Online Course           Mudah                  3.5       17
+ 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
+ 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
+ 3        Matdis                      Online Course           Sulit                  3.5       32
+ 5        AVM                         Catatan                 Sedang                 1         50
 
+//ATAU BISA JUGA
+## 2, 1, pilih 2 atau pilih 3
+==== Urut =====
+1. Ascending
+2. Descending
+3. Kembali
+===============
+pilih (1-3) :
+//terus lanjut kaya disebelumnya dengan tambahan tulisan " (ASCENDING) / (DESCENDING) " -> sesuai dengan input
 
 ## 2, pilih 2
 DATA SUMBER BELAJAR DENGAN RATING TERTINGGI
@@ -129,68 +193,12 @@ ID        JUDUl                       KATEGORI                TINGKAT KESULITAN 
 
 
 ## 2, pilih 4
-TINGKAT KESULITAN : MUDAH
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
- 6        Matdis                      Online Course           Mudah                  3.5       17
-
-TINGKAT KESULITAN : SEDANG
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 2        AVM                         Catatan                 Sedang                 5         10
- 5        AVM                         Catatan                 Sedang                 1         50
-
-TINGKAT KESULITAN : SULIT
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
- 3        Matdis                      Online Course           Sulit                  3.5       32
-
-
-## 2, pilih 5
 // jujur belum kepikiran
 // paling kaya kita bikin rumus nya gitu, kaya dengan rating tertinggi dan waktu terpendek
-
-## 2, pilih 6
-DATA SUMBER BELAJAR URUT RATING
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 5        AVM                         Catatan                 Sedang                 1         50
- 6        Matdis                      Online Course           Mudah                  3.5       17
- 3        Matdis                      Online Course           Sulit                  3.5       32
- 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
- 2        AVM                         Catatan                 Sedang                 5         10
- 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
- 
-## 2, pilih 7
-DATA SUMBER BELAJAR URUT DURASI WAKTU
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 2        AVM                         Catatan                 Sedang                 5         10
- 6        Matdis                      Online Course           Mudah                  3.5       17
- 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
- 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
- 3        Matdis                      Online Course           Sulit                  3.5       32
- 5        AVM                         Catatan                 Sedang                 1         50
-
-//ATAU BISA JUGA
-## 2, pilih 6 atau pilih 7
-==== Urut =====
-1. Ascending
-2. Descending
-3. Kembali
-===============
-pilih (1-3) :
-//terus lanjut kaya disebelumnya dengan tambahan tulisan " (ASCENDING) / (DESCENDING) " -> sesuai dengan input
+// atau mending ga usah ya?
 
 
-## 2, pilih 8 //fitur tantangan, dipikir terakhir aja
+## 2, pilih 5 //fitur tantangan, dipikir terakhir aja
 Berapa durasi waktu belajar yang anda miliki : input
 
 Durasi = 30
@@ -202,6 +210,7 @@ ID        JUDUl                       KATEGORI                TINGKAT KESULITAN 
  4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
  6        Matdis                      Online Course           Mudah                  3.5       17
 
+// yang ke output cuman data yang waktu < 30
 
 
 # PILIH 3

@@ -1,2 +1,5 @@
-1      Matdis                    Tutorial        Mudah                    4            15           
-2      AVM                       Buku            Sulit                    2            30           
+1      Matdis                    Tutorial        mudah                    4            15           
+2      AVM                       Buku            sulit                    2            30           
+3      kalkulus                  video           sulit                    3            74           
+4      logif                     course          sedang                   4            34           
+5      Pemrograman               Buku            mudah                    1            39           

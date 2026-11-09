@@ -29,9 +29,9 @@ void input (data_sumber &belajar, int n) {
 }
 
 // save tanpa looping
-// save -> simpan ke data.txt
+// save -> simpan ke test.txt
 void save (data_sumber belajar) {
-    ofstream in("data.txt", ios::app);
+    ofstream in("test.txt", ios::app);
 
     if (in.is_open()) {
         in << left << setw(7) << belajar.id << left << setw(26);
@@ -42,7 +42,7 @@ void save (data_sumber belajar) {
         in << belajar.waktu << endl;
     }
     else {
-        cout << "File data.txt tidak ditemukan.";
+        cout << "File test.txt tidak ditemukan.";
     }
     
     in.close();
@@ -50,7 +50,7 @@ void save (data_sumber belajar) {
 
 
 void save_loop (data_sumber belajar[], int n ) {
-    ofstream in("data.txt");
+    ofstream in("test.txt");
 
     for (int i = 0; i < n; i++) {
         if (in.is_open()) {
@@ -62,7 +62,7 @@ void save_loop (data_sumber belajar[], int n ) {
             in << belajar[i].waktu << endl;
         }
         else {
-            cout << "File data.txt tidak ditemukan.";
+            cout << "File test.txt tidak ditemukan.";
         }
     }
     
@@ -83,7 +83,7 @@ void menu () {
 }
 
 void load (int &n) {
-    ifstream out("data.txt");
+    ifstream out("test.txt");
     if (!out) return;
     while(out >> belajar[n].id >> belajar[n].judul >> belajar[n].kategori >> belajar[n].tingkat_kesulitan >> belajar[n].rating >> belajar[n].waktu) {
         n++;
@@ -107,7 +107,7 @@ void header () {
 
 //view dari file txt
 void view_file () {
-    ifstream out("data.txt");
+    ifstream out("test.txt");
     string buffer;
      if (out.is_open()) {
         while(getline(out, buffer)) {
@@ -115,7 +115,7 @@ void view_file () {
         }
     }
     else {
-        cout << "File data.txt tidak ditemukan.";
+        cout << "File test.txt tidak ditemukan.";
     }
      
     out.close();           

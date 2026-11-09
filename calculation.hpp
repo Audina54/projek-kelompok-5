@@ -3,6 +3,16 @@
 // untuk mencegah error duplikasi data/fungsi saat di-include di file lain.
 
 #include "struct.hpp"
+#include <string>
+
+struct mahasiswa;
+
+double mean(mahasiswa data[], string properties);
 
 
-double calculatemean(mahasiswa data[]);
+
+
+
+
+
+

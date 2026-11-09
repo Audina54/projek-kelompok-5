@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <fstream>
 #include <conio.h>
+#include <string>
 using namespace std;
 
 struct data_sumber {

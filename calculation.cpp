@@ -3,24 +3,12 @@
 #include <vector>
 using namespace std;
 
-struct mahasiswa{
-    int id;
-    string judul;
-    string kategori;
-    string tingkat;
-    int rating;
-    int waktu;
-
-}
-// properties = [rating, waktu]
-
-
 // Menghitung Mean
 double mean(mahasiswa data[], string properties)
 {
     double sum = 0;
     double mean = 0;
-    for(int i ; i < data.lenght() ; i++)
+    for(int i = 0 ; i < data.lenght() ; i++)
     {
         if(properties == "rating")
         {
@@ -36,11 +24,12 @@ double mean(mahasiswa data[], string properties)
 }
 
 // Tertinggi Terrendah
-array terrendah(mahasiswa data[], string properties)
+vector<string> max(mahasiswa data[], string properties)
 {
     int min = 0;
-    vector<string> =[];
-    for(int i ; i < data.lenght() ; i++)
+    vector<string> minoutput = [];
+    // Find 
+    for(int i = 0 ; i < data.lenght() ; i++)
     {
         if(properties == "rating")
         {
@@ -57,13 +46,30 @@ array terrendah(mahasiswa data[], string properties)
             }
         }
     }
-    return mean;
+    for(int i = 0 ; i < data.lenght() ; i++)
+    {
+        if(properties == "rating")
+        {
+            if(data[i].rating == min)
+            {
+                minoutput.push_back(data[i].rating);
+            }
+        }
+        elseif(properties == "waktu")
+        {
+            if(data[i].waktu == min)
+            {
+                minoutput.push_back(data[i].waktu);
+            }
+        }
+    }
+    return minoutput;
 }
 
-array tertinggi(mahasiswa data[], string properties)
+vector<string> min(mahasiswa data[], string properties)
 {
     int max = 0;
-    vector<string> =[];
+    vector<string> maxoutput = [];
     for(int i ; i < data.lenght() ; i++)
     {
         if(properties == "rating")
@@ -81,7 +87,24 @@ array tertinggi(mahasiswa data[], string properties)
             }
         }
     }
-    return mean;
+    for(int i = 0 ; i < data.lenght() ; i++)
+    {
+        if(properties == "rating")
+        {
+            if(data[i].rating == max)
+            {
+                maxoutput.push_back(data[i].rating);
+            }
+        }
+        elseif(properties == "waktu")
+        {
+            if(data[i].waktu == max)
+            {
+                maxoutput.push_back(data[i].waktu);
+            }
+        }
+    }
+    return maxoutput;
 }
 
 

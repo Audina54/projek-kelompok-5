@@ -8,6 +8,8 @@
 struct mahasiswa;
 
 double mean(mahasiswa data[], string properties);
+array max(mahasiswa data[], string properties);
+array min(mahasiswa data[], string properties);
 
 
 

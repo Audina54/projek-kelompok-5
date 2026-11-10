@@ -4,11 +4,11 @@
 using namespace std;
 
 // Menghitung Mean
-double mean(mahasiswa data[], string properties)
+double mean(mahasiswa data[], int jumlah , string properties)
 {
     double sum = 0;
     double mean = 0;
-    for(int i = 0 ; i < data.lenght() ; i++)
+    for(int i = 0 ; i < jumlah ; i++)
     {
         if(properties == "rating")
         {
@@ -19,7 +19,7 @@ double mean(mahasiswa data[], string properties)
             total += data[i].waktu;
         }
     }
-    mean = sum/data.lenght();
+    mean = sum/jumlah;
     return mean;
 }
 
@@ -99,7 +99,3 @@ vector<string> min(mahasiswa data[], int jumlah,  string properties)
     }
     return minoutput;
 }
-
-
-
-

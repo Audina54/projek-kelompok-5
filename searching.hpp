@@ -26,15 +26,15 @@ void search_int (data_sumber belajar[], int n, string properties, int target) {
 }
 
 void search_durasiBelajar () {
-// pprint yang (belajar[].waktu <= target)
+// pprint yang (belajar[].waktu <= target), ini dibutuhin buat fungsi tantangan
 }
 
 void search_rating () {
-
+// karena rating tipe datanya double jadi dipisah sendiri
 }
 
 void search_string () {
-
+// propertiesnya bisa judul, kategori, dan tingkat_kesulitan
 }
 
 int bin_search(int arr[], int ukuran, int dicari){

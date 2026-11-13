@@ -13,8 +13,8 @@ struct mahasiswa;
 // Jumlah ==> ukuran array of struct (sizeof(data)/ sizeof(data{0]))
 // Properties ==> apa yang mau dicari "rating" or "waktu" berupa string
 double mean(data_sumber belajar[], int jumlah , string properties);
-vector<string> max(data_sumber belajar[], int jumlah,  string properties);
-vector<string> min(data_sumber belajar[], int jumlah,  string properties);
+int findmax(data_sumber belajar[], int jumlah,  string properties);
+int findmin(data_sumber belajar[], int jumlah,  string properties);
 
 // Menghitung Mean
 double mean(data_sumber belajar[], int jumlah , string properties)
@@ -38,10 +38,9 @@ double mean(data_sumber belajar[], int jumlah , string properties)
 }
 
 // Tertinggi Terendah
-vector<string> max(data_sumber belajar[], int jumlah,  string properties)
+int findmax(data_sumber belajar[], int jumlah,  string properties)
 {
-    int max = 0;
-    vector<string> maxoutput;
+    int max = 0;    
     // Find minimum value
     for(int i = 0 ; i < jumlah ; i++)
     {
@@ -60,26 +59,12 @@ vector<string> max(data_sumber belajar[], int jumlah,  string properties)
             }
         }
     }
-    
-    //Output
-    for(int i = 0 ; i < jumlah ; i++)
-    {
-        if(properties == "rating" && belajar[i].rating == max)
-        {
-            maxoutput.push_back(belajar[i].judul);
-        }
-        else if(properties == "waktu" && belajar[i].waktu == max)
-        {
-            maxoutput.push_back(belajar[i].judul);
-        }
-    }
-    return maxoutput;
+    return max;
 }
 
-vector<string> min(data_sumber belajar[], int jumlah,  string properties)
+int findmin(data_sumber belajar[], int jumlah,  string properties)
 {
     int min = INT_MAX;
-    vector<string> minoutput;
     // Find minimum value
     for(int i = 0 ; i < jumlah ; i++)
     {
@@ -98,22 +83,8 @@ vector<string> min(data_sumber belajar[], int jumlah,  string properties)
             }
         }
     }
-    
-    //Output
-    for(int i = 0 ; i < jumlah ; i++)
-    {
-        if(properties == "rating" && belajar[i].rating == min)
-        {
-            minoutput.push_back(belajar[i].judul);
-        }
-        else if(properties == "waktu" && belajar[i].waktu == min)
-        {
-            minoutput.push_back(belajar[i].judul);
-        }
-    }
-    return minoutput;
+    return min;
 }
-
 
 
 

@@ -6,7 +6,6 @@
 #include <string>
 #include <vector>
 
-
 struct mahasiswa;
 
 // Data ==> data array of struct 

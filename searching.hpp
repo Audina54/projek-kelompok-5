@@ -3,6 +3,7 @@
 // untuk mencegah error duplikasi data/fungsi saat di-include di file lain.
 
 #include "struct.hpp"
+#include "input_output.hpp"
 
 void search_int (data_sumber belajar[], int n, string properties, int target) {
     int jumlah = 0;
@@ -25,16 +26,59 @@ void search_int (data_sumber belajar[], int n, string properties, int target) {
     }
 }
 
-void search_durasiBelajar () {
+void search_durasiBelajar (data_sumber belajar[], int n, int target) {
 // pprint yang (belajar[].waktu <= target), ini dibutuhin buat fungsi tantangan
+    int jumlah = 0;
+    for (int i = 0; i < n; i++) {
+        if (belajar[i].waktu <= target) {                view_baris(belajar[i]);  
+            jumlah++;
+        }
+    }            
+    if (jumlah == 0) {
+        cout << "(data tidak ditemukan)\n";
+    }
 }
 
-void search_rating () {
+void search_rating (data_sumber belajar[], int n, string properties, double target) {
 // karena rating tipe datanya double jadi dipisah sendiri
+int jumlah = 0;
+    for (int i = 0; i < n; i++) {
+            if (belajar[i].rating == target) {
+                view_baris(belajar[i]);  
+                jumlah++;
+            }
+    }            
+    if (jumlah == 0) {
+        cout << "(data tidak ditemukan)\n";
+    }
 }
 
-void search_string () {
+void search_string (data_sumber belajar[], int n, string properties, string target) {
 // propertiesnya bisa judul, kategori, dan tingkat_kesulitan
+int jumlah = 0;
+    for (int i = 0; i < n; i++) {
+        if (properties == "judul") {
+            if (belajar[i].judul == target) {
+                view_baris(belajar[i]);  
+                jumlah++;
+            }
+        }
+        if (properties == "kategori") {
+            if (belajar[i].kategori == target) {
+                view_baris(belajar[i]);  
+                jumlah++;
+            }
+        }
+        if (properties == "tingkat_kesulitan") {
+            if (belajar[i].tingkat_kesulitan == target) {
+                view_baris(belajar[i]);  
+                jumlah++;
+            }
+        }
+    }            
+    if (jumlah == 0) {
+        cout << "(data tidak ditemukan)\n";
+    }
 }
 
 int bin_search(int arr[], int ukuran, int dicari){

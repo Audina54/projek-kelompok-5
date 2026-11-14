@@ -10,5 +10,3 @@ struct data_sumber {
     double rating;
     string judul, kategori, tingkat_kesulitan;
 };
-
-data_sumber belajar[1000];

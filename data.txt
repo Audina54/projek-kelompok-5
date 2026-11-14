@@ -1,0 +1,9 @@
+1      AVM                       catatan                  sedang                   4            20              
+2      kalkulus                  video_pembelajaran       sulit                    4.8          39           
+3      Pemrograman               online_course            sulit                    3            50           
+4      matematika_diskrit        tutorial                 mudah                    3.7          25           
+5      logika_informatika        catatan                  mudah                    4.9          32           
+6      humaniora_digital         online_course            mudah                    2            15           
+7      sains_inovasi             video_pembelajaran       sedang                   2.7          29           
+8      praktikum                 tutorial                 sedang                   4.9          15           
+9      kalkulus_2                catatan                  sedang                   3.4          45           

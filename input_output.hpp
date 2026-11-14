@@ -138,7 +138,7 @@ void input (data_sumber &belajar, int n) {
     belajar.rating = baca_desimal(1, 5);
 
     cout << "Durasi belajar (menit) = ";
-    belajar.waktu = baca_angka(1, 10000);
+    belajar.waktu = baca_angka(1, INT_MAX);
 
     cout << "\nData berhasil ditambahkan (ID " << belajar.id << ").\n";
 }

@@ -11,4 +11,4 @@ struct data_sumber {
     string judul, kategori, tingkat_kesulitan;
 };
 
-data_sumber belajar[100];
+data_sumber belajar[1000];

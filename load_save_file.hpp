@@ -6,7 +6,7 @@
 #include <fstream>
 #include <iomanip>
 
-void load (int &n) {
+void load (data_sumber belajar[], int &n) {
     ifstream out("data.txt");
     if (!out) return;
     while(out >> belajar[n].id >> belajar[n].judul >> belajar[n].kategori >> belajar[n].tingkat_kesulitan >> belajar[n].rating >> belajar[n].waktu) {

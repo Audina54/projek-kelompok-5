@@ -11,9 +11,10 @@ void menampilkan_data_sumber (data_sumber belajar[], int n);
 void cari_data (data_sumber belajar[], int n);
 
 int main () {
+    data_sumber belajar[1000];
     int pilihan;
     int n = 0;
-    load(n);
+    load(belajar, n);
     do {
     menu ();
     pilihan = baca_angka(1, 4);

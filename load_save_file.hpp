@@ -21,7 +21,7 @@ void save (data_sumber belajar) {
 
     if (in.is_open()) {
         in << left << setw(7) << belajar.id << left << setw(26);
-        in << belajar.judul << left << setw(16);
+        in << belajar.judul << left << setw(25);
         in << belajar.kategori << left << setw(25);
         in << belajar.tingkat_kesulitan << left << setw(13);
         in << belajar.rating << left << setw(13);

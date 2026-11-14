@@ -80,7 +80,6 @@ void tampilkan_seluruh_data (data_sumber belajar[], int n) {
                 cout << "\nDATA SUMBER BELAJAR TERURUT RATING";
                 header();
                 bubble_sort(belajar, n, "rating");
-                if (n == 0) cout << "(tidak ada data)\n";
                 view_arr(belajar, n);
                 cout << "\nenter untuk lanjut..";
                 getch();
@@ -91,7 +90,6 @@ void tampilkan_seluruh_data (data_sumber belajar[], int n) {
                 cout << "\nDATA SUMBER BELAJAR TERURUT DURASI WAKTU";
                 header();
                 bubble_sort(belajar, n, "waktu");
-                if (n == 0) cout << "(tidak ada data)\n";
                 view_arr(belajar, n);
                 cout << "\nenter untuk lanjut..";
                 getch();
@@ -135,11 +133,11 @@ void menampilkan_data_sumber (data_sumber belajar[], int n) {
                 cout << "\nDATA SUMBER BELAJAR DENGAN RATING TERTINGGI";
                 header();
                 max_rating = findmax(belajar, n, "rating"); 
-                //fungsi search double
+                search_rating(belajar, n, max_rating);
                 cout << "\nDATA SUMBER BELAJAR DENGAN RATING TERENDAH";
                 header();
                 min_rating = findmin(belajar, n, "rating"); 
-                //fungsi search double
+                search_rating(belajar, n, min_rating);
                 cout << "\nenter untuk lanjut..";
                 getch();
                 system("cls");
@@ -185,7 +183,7 @@ void cari_data (data_sumber belajar[], int n) {
             case 1 :
                 int id;
                 cout << "ID : ";
-                id = baca_angka(1, n+1);
+                id = baca_angka(1, INT_MAX);
                 header();
                 search_int(belajar, n, "id", id);
                 cout << "\nenter untuk lanjut..";
@@ -197,7 +195,7 @@ void cari_data (data_sumber belajar[], int n) {
                 cout << "Judul (1 kata, pakai _ untuk spasi) : ";
                 cin >> judul;
                 header();
-                //fungsi search string
+                search_string(belajar, n, "judul", judul);
                 cout << "\nenter untuk lanjut..";
                 getch();
                 system("cls");
@@ -211,7 +209,7 @@ void cari_data (data_sumber belajar[], int n) {
                 cout << endl;
                 cout << "Kategori : " << kategori;
                 header();
-                //fungsi search string
+                search_string(belajar, n, "kategori", kategori);
                 cout << "\nenter untuk lanjut..";
                 getch();
                 system("cls");
@@ -220,10 +218,11 @@ void cari_data (data_sumber belajar[], int n) {
 
             case 4 :
                 int durasi;
-                cout << "Berapa durasi belajar yang anda miliki (dalam menit) : ";
-                durasi = baca_angka(0, 1000000);
+                cout << "Berapa durasi waktu belajar yang anda miliki (dalam menit) : ";
+                durasi = baca_angka(0, INT_MAX);
+                cout << "\nDengan durasi waktu " << durasi << " menit anda bisa mempelajari sumber belajar : ";
                 header();
-                //fungsi search durasi belajar
+                search_durasiBelajar(belajar, n, durasi);
                 cout << "\nenter untuk lanjut..";
                 getch();
                 system("cls");

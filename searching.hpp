@@ -27,10 +27,10 @@ void search_int (data_sumber belajar[], int n, string properties, int target) {
 }
 
 void search_durasiBelajar (data_sumber belajar[], int n, int target) {
-// pprint yang (belajar[].waktu <= target), ini dibutuhin buat fungsi tantangan
     int jumlah = 0;
     for (int i = 0; i < n; i++) {
-        if (belajar[i].waktu <= target) {                view_baris(belajar[i]);  
+        if (belajar[i].waktu <= target) {                
+            view_baris(belajar[i]);  
             jumlah++;
         }
     }            
@@ -39,8 +39,7 @@ void search_durasiBelajar (data_sumber belajar[], int n, int target) {
     }
 }
 
-void search_rating (data_sumber belajar[], int n, string properties, double target) {
-// karena rating tipe datanya double jadi dipisah sendiri
+void search_rating (data_sumber belajar[], int n, double target) {
 int jumlah = 0;
     for (int i = 0; i < n; i++) {
             if (belajar[i].rating == target) {
@@ -54,7 +53,6 @@ int jumlah = 0;
 }
 
 void search_string (data_sumber belajar[], int n, string properties, string target) {
-// propertiesnya bisa judul, kategori, dan tingkat_kesulitan
 int jumlah = 0;
     for (int i = 0; i < n; i++) {
         if (properties == "judul") {
@@ -80,26 +78,3 @@ int jumlah = 0;
         cout << "(data tidak ditemukan)\n";
     }
 }
-
-int bin_search(int arr[], int ukuran, int dicari){
-    int low = 0;
-    int high = ukuran - 1;
-    int mid;    
-
-    while (low <= high){
-    
-    mid = low + (high - low) / 2;
-
-    if (arr[mid] == dicari){
-        return mid;
-    } else if (arr[mid] < dicari){
-        low = mid + 1;
-    } else {
-        high = mid - 1;
-    }
-    
-    }
-
-    return -1;
-}
-

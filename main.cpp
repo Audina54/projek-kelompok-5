@@ -79,7 +79,7 @@ void tampilkan_seluruh_data (data_sumber belajar[], int n) {
             case 2 :
                 cout << "\nDATA SUMBER BELAJAR TERURUT RATING";
                 header();
-                bubu_sort(belajar, n, "rating");
+                bubble_sort(belajar, n, "rating");
                 if (n == 0) cout << "(tidak ada data)\n";
                 view_arr(belajar, n);
                 cout << "\nenter untuk lanjut..";
@@ -90,7 +90,7 @@ void tampilkan_seluruh_data (data_sumber belajar[], int n) {
             case 3 :
                 cout << "\nDATA SUMBER BELAJAR TERURUT DURASI WAKTU";
                 header();
-                bubu_sort(belajar, n, "waktu");
+                bubble_sort(belajar, n, "waktu");
                 if (n == 0) cout << "(tidak ada data)\n";
                 view_arr(belajar, n);
                 cout << "\nenter untuk lanjut..";

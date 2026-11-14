@@ -4,7 +4,7 @@
 
 #include "struct.hpp"
 
-void bubu_sort(data_sumber belajar[], int jumlah, string properties){
+void bubble_sort(data_sumber belajar[], int jumlah, string properties){
     for (int i = 0; i < jumlah; i++){
         for (int j = i+1; j < jumlah; j++){
             if (properties == "rating") {

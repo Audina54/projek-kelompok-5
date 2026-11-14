@@ -30,6 +30,5 @@ void save (data_sumber belajar) {
     else {
         cout << "File data.txt tidak ditemukan.";
     }
-    
     in.close();
 }

@@ -6,7 +6,7 @@
 #include <fstream>
 #include <iomanip>
 
-void load (int &n) {
+void load (data_sumber belajar[], int &n) {
     ifstream out("data.txt");
     if (!out) return;
     while(out >> belajar[n].id >> belajar[n].judul >> belajar[n].kategori >> belajar[n].tingkat_kesulitan >> belajar[n].rating >> belajar[n].waktu) {
@@ -21,7 +21,7 @@ void save (data_sumber belajar) {
 
     if (in.is_open()) {
         in << left << setw(7) << belajar.id << left << setw(26);
-        in << belajar.judul << left << setw(16);
+        in << belajar.judul << left << setw(25);
         in << belajar.kategori << left << setw(25);
         in << belajar.tingkat_kesulitan << left << setw(13);
         in << belajar.rating << left << setw(13);
@@ -30,6 +30,5 @@ void save (data_sumber belajar) {
     else {
         cout << "File data.txt tidak ditemukan.";
     }
-    
     in.close();
 }

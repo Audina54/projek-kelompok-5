@@ -12,12 +12,42 @@ void menu () {
     cout << "\n============= Menu =============\n";
     cout << "1. Menambah data sumber belajar\n";
     cout << "2. Menampilkan data sumber belajar\n";
-    cout << "3. Menampilkan data sumber belajar terurut rating\n";
-    cout << "4. Menampilkan data sumber belajar terkelompok kategori\n";
-    cout << "5. Mencari data sumber belajar\n";
-    cout << "6. Keluar\n";
+    cout << "3. Mencari data sumber belajar\n";
+    cout << "4. Keluar\n";
     cout << "================================.\n";
-    cout << "pilih (1-6) : ";
+    cout << "pilih (1-4) : ";
+}
+
+void menu_menampilkanData() {
+    cout << "\n======== Menampilkan Data Sumber Belajar =========\n";
+    cout << "1. Tampilkan seluruh data\n";
+    cout << "2. Tampilkan data dengan rating tertinggi dan terendah\n";
+    cout << "3. Tampilkan data dengan durasi terpanjang dan terpendek\n";
+    cout << "4. Kembali\n";
+    cout << "===================================================\n";
+    cout << "pilih(1-4) : ";
+}
+
+void menu_tampilkan() {
+    cout << "\n======= Tampilkan Seluruh Data =======\n";
+    cout << "1. Tampilkan data (terkelompok tingkat kesulitan)\n";
+    cout << "2. Tampilkan data urut rating\n";
+    cout << "3. Tampilkan data urut durasi waktu\n";
+    cout << "4. Kembali\n";
+    cout << "======================================\n";
+    cout << "pilih (1-4) : ";
+
+}
+
+void menu_cariData () {
+    cout << "\n======= Cari Data =======\n";
+    cout << "1. Berdasarkan ID\n";
+    cout << "2. Berdasarkan Judul\n";
+    cout << "3. Berdasarkan Kategori\n";
+    cout << "4. Berdasarkan Durasi Waktu\n";
+    cout << "5. Kembali\n";
+    cout << "=========================\n";
+    cout << "pilih (1-5) : ";
 }
 
 void menu_kategori () {
@@ -108,7 +138,7 @@ void input (data_sumber &belajar, int n) {
     belajar.rating = baca_desimal(1, 5);
 
     cout << "Durasi belajar (menit) = ";
-    belajar.waktu = baca_angka(1, 10000);
+    belajar.waktu = baca_angka(1, INT_MAX);
 
     cout << "\nData berhasil ditambahkan (ID " << belajar.id << ").\n";
 }
@@ -117,21 +147,21 @@ void input (data_sumber &belajar, int n) {
 
 //                      OUTPUT
 void header () {
-    cout << "\n====================================================================================================\n";
+    cout << "\n========================================================================================================\n";
     cout << left << setw(7) << "ID"
          << left << setw(26) << "JUDUL"
-         << left << setw(16) << "KATEGORI"
+         << left << setw(25) << "KATEGORI"
          << left << setw(25) << "TINGKAT KESULITAN"
          << left << setw(13) << "RATING"
          << left << setw(13) << "WAKTU";
-    cout << "\n====================================================================================================\n";
+    cout << "\n========================================================================================================\n";
 }
 
 // Menampilkan 1 baris data
 void view_baris (data_sumber belajar) {
     cout << left << setw(7) << belajar.id
          << left << setw(26) << belajar.judul
-         << left << setw(16) << belajar.kategori
+         << left << setw(25) << belajar.kategori
          << left << setw(25) << belajar.tingkat_kesulitan
          << left << setw(13) << belajar.rating
          << left << setw(13) << belajar.waktu << endl;

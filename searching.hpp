@@ -3,6 +3,7 @@
 // untuk mencegah error duplikasi data/fungsi saat di-include di file lain.
 
 #include "struct.hpp"
+#include "input_output.hpp"
 
 void search_int (data_sumber belajar[], int n, string properties, int target) {
     int jumlah = 0;
@@ -25,37 +26,55 @@ void search_int (data_sumber belajar[], int n, string properties, int target) {
     }
 }
 
-void search_durasiBelajar () {
-// pprint yang (belajar[].waktu <= target), ini dibutuhin buat fungsi tantangan
-}
-
-void search_rating () {
-// karena rating tipe datanya double jadi dipisah sendiri
-}
-
-void search_string () {
-// propertiesnya bisa judul, kategori, dan tingkat_kesulitan
-}
-
-int bin_search(int arr[], int ukuran, int dicari){
-    int low = 0;
-    int high = ukuran - 1;
-    int mid;    
-
-    while (low <= high){
-    
-    mid = low + (high - low) / 2;
-
-    if (arr[mid] == dicari){
-        return mid;
-    } else if (arr[mid] < dicari){
-        low = mid + 1;
-    } else {
-        high = mid - 1;
+void search_durasiBelajar (data_sumber belajar[], int n, int target) {
+    int jumlah = 0;
+    for (int i = 0; i < n; i++) {
+        if (belajar[i].waktu <= target) {                
+            view_baris(belajar[i]);  
+            jumlah++;
+        }
+    }            
+    if (jumlah == 0) {
+        cout << "(data tidak ditemukan)\n";
     }
-    
-    }
-
-    return -1;
 }
 
+void search_rating (data_sumber belajar[], int n, double target) {
+int jumlah = 0;
+    for (int i = 0; i < n; i++) {
+            if (belajar[i].rating == target) {
+                view_baris(belajar[i]);  
+                jumlah++;
+            }
+    }            
+    if (jumlah == 0) {
+        cout << "(data tidak ditemukan)\n";
+    }
+}
+
+void search_string (data_sumber belajar[], int n, string properties, string target) {
+int jumlah = 0;
+    for (int i = 0; i < n; i++) {
+        if (properties == "judul") {
+            if (belajar[i].judul == target) {
+                view_baris(belajar[i]);  
+                jumlah++;
+            }
+        }
+        if (properties == "kategori") {
+            if (belajar[i].kategori == target) {
+                view_baris(belajar[i]);  
+                jumlah++;
+            }
+        }
+        if (properties == "tingkat_kesulitan") {
+            if (belajar[i].tingkat_kesulitan == target) {
+                view_baris(belajar[i]);  
+                jumlah++;
+            }
+        }
+    }            
+    if (jumlah == 0) {
+        cout << "(data tidak ditemukan)\n";
+    }
+}

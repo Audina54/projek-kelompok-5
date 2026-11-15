@@ -12,8 +12,8 @@ struct mahasiswa;
 // Jumlah ==> ukuran array of struct (sizeof(data)/ sizeof(data{0]))
 // Properties ==> apa yang mau dicari "rating" or "waktu" berupa string
 double mean(data_sumber belajar[], int jumlah , string properties);
-int findmax(data_sumber belajar[], int jumlah,  string properties);
-int findmin(data_sumber belajar[], int jumlah,  string properties);
+double findmax(data_sumber belajar[], int jumlah,  string properties);
+double findmin(data_sumber belajar[], int jumlah,  string properties);
 
 // Menghitung Mean
 double mean(data_sumber belajar[], int jumlah , string properties)

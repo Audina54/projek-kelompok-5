@@ -15,6 +15,7 @@ struct mahasiswa;
 double mean(data_sumber belajar[], int jumlah , string properties);
 int findmax(data_sumber belajar[], int jumlah,  string properties);
 int findmin(data_sumber belajar[], int jumlah,  string properties);
+int totaltime(data_sumber belajar[], int jumlah);
 
 // Menghitung Mean
 double mean(data_sumber belajar[], int jumlah , string properties)
@@ -86,6 +87,15 @@ int findmin(data_sumber belajar[], int jumlah,  string properties)
     return min;
 }
 
+int totaltime(data_sumber belajar[], int jumlah)
+{
+    if(jumlah <= 0)
+    {
+        return 0;
+    }
+    
+    return belajar[jumlah].waktu + totaltime(belajar , jumlah-1);
+}
 
 
 

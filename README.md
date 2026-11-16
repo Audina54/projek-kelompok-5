@@ -1,264 +1,46 @@
-# STUDENT LEARNING RESOURCE & COURSE MATERIAL TRACKER
+# Student Learning Resource & Course Material Tracker
 
-# Kasus: 
-Buat program untuk mengelola sumber belajar seperti buku, catatan kuliah, tutorial, video pembelajaran, dan online course.
+Aplikasi berbasis console (CLI) yang dibuat menggunakan bahasa C++ untuk mendata, mengelola, mengelompokkan, mengurutkan, dan mencari berbagai sumber belajar mahasiswa (buku, catatan, tutorial, video pembelajaran, maupun *online course*).
 
-# Data minimal yang disimpan:
-•	ID sumber belajar
-•	Judul
-•	Kategori
-•	Tingkat kesulitan
-•	Rating
-•	Estimasi waktu belajar (menit)
+Proyek ini disusun untuk memenuhi Tugas Project Praktikum Pemrograman — Kelompok 5 (Program Studi Ilmu Komputer, FMIPA UGM).
 
-# Fitur wajib:
-•	Menambah dan menampilkan data sumber belajar.
-•	Menghitung rata-rata rating dan rata-rata estimasi waktu belajar.
-•	Menentukan sumber belajar dengan rating tertinggi/terendah dan waktu belajar terpanjang/terpendek.
-•	Menggunakan IF untuk mengelompokkan tingkat kesulitan atau rekomendasi penggunaan.
-•	Mengurutkan data berdasarkan rating atau estimasi waktu belajar.
-•	Mencari data berdasarkan ID, judul, atau kategori.
-•	Menggunakan fungsi rekursif untuk menghitung total estimasi waktu belajar seluruh sumber.
+---
 
-# Fitur tantangan: 
-pengguna memasukkan waktu belajar yang tersedia, lalu program menampilkan sumber belajar yang dapat diselesaikan dalam waktu tersebut.
+## Fitur Utama
 
-# KETERANGAN Data 
-•	ID sumber belajar (dari program, mulai dari 1 dst)
-•	Judul (dari user)
-•	Kategori (buku, catatan kuliah, tutorial, video pembelajaran, dan online course) //kayanya mending di dikitin
-•	Tingkat kesulitan (mudah, sedang, sulit)
-•	Rating (1-5)
-•	Estimasi waktu belajar (menit)
+1. **Penyimpanan & Pemuatan Data Otomatis (`data.txt`)**
+   * Otomatis memuat riwayat data sumber belajar dari file `data.txt` saat program dijalankan dan menyimpan data baru secara permanen (*append*) menggunakan library `<fstream>`.
+2. **Penambahan Data Sumber Belajar**
+   * Menambahkan data baru meliputi ID otomatis, judul (1 kata dengan pemisah `_`), kategori, tingkat kesulitan (`mudah`, `sedang`, `sulit`), rating (`1.0` – `5.0`), dan estimasi durasi belajar (menit), lengkap dengan validasi input.
+3. **Statistik Ringkas (Rekursif & Ekstrem)**
+   * Menghitung rata-rata rating dan rata-rata durasi belajar (menggunakan fungsi rekursif `totaltime`), serta menampilkan sumber belajar dengan rating tertinggi/terendah dan durasi waktu terpanjang/terpendek.
+4. **Pengelompokan & Pengurutan Manual (*Bubble Sort*)**
+   * Mengelompokkan sumber belajar berdasarkan tingkat kesulitan (`mudah`, `sedang`, `sulit`).
+   * Mengurutkan data secara *Ascending* maupun *Descending* berdasarkan **Rating** atau **Durasi Waktu** menggunakan algoritma *Bubble Sort* manual.
+5. **Pencarian Data (*Linear Search*) & Rekomendasi Durasi**
+   * Mencari sumber belajar berdasarkan **ID**, **Judul**, **Kategori**, maupun **Durasi Waktu Belajar** yang tersedia (menampilkan seluruh materi dengan estimasi waktu $\le$ waktu yang dimiliki pengguna).
 
+---
 
-//misal data semuanya
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
- 2        AVM                         Catatan                 Sedang                 5         10
- 3        Matdis                      Online Course           Sulit                  3.5       32
- 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
- 5        AVM                         Catatan                 Sedang                 1         50
- 6        Matdis                      Online Course           Mudah                  3.5       17
-//dst
+## Struktur File Proyek
 
+```text
+projek-kelompok-5/
+├── main.cpp              # Program utama & navigasi menu interaktif
+├── struct.hpp            # Definisi struktur data (data_sumber)
+├── input_output.hpp      # Tampilan menu, validasi input, dan format tabel output
+├── load_save_file.hpp    # Operasi baca/tulis file eksternal (data.txt)
+├── calculation.hpp       # Perhitungan rata-rata, nilai min/max, & rekursi total waktu
+├── sorting.hpp           # Implementasi manual Bubble Sort (Ascending & Descending)
+├── searching.hpp         # Implementasi manual Linear Search (ID, judul, kategori, durasi)
+├── data.txt              # File penyimpanan data sumber belajar
+└── README.md             # Dokumentasi proyek
 
-# MENU
-============= Menu =============
-1. Menambah data sumber belajar
-2. Menampilkan data sumber belajar
-3. Mencari data sumber belajar
-4. Keluar
-================================.
-pilih (1-4) : 
+---
 
+## Anggota Kelompok 5
 
-
-# PILIH 1
-===== Menambah data sumber belajar =====
-Judul : input
-
-==== Kategori ==== 
-1. buku
-2. catatan
-3. tutorial
-4. video pembelajaran
-5. online course
-==================.
-pilih (1-5) : input
-
-===== Tingkat Kesulitan =====
-1. Mudah
-2. Sedang
-3. Sulit
-=============================.
-pilih (1-3) = input
-
-Rating (1-5) = input
-
-Durasi belajar (menit) = input
-
-
-
-# PILIH 2
-rata-rata rating       = output (total semua rating/ total sumber data belajar)
-rata-rata durasi waktu = output (total semua durasi/ total sumber data belajar)
-
-====== Menampilkan Data Sumber Belajar =======
-1. Tampilkan seluruh data
-2. Tampilkan data dengan rating tertinggi dan terendah
-3. Tampilkan data dengan durasi terpanjang dan terpendek
-4. Tampilkan data yang terekomendasi //Menggunakan IF untuk mengelompokkan tingkat kesulitan atau rekomendasi penggunaan -> jujur kaya bingung gitu deh rekomendasi penggunaan maksudnya kaya gimana
-5. Tampilkan data berdasarkan durasi belajar yang dimiliki //ini fitur tantangan
-6. Kembali
-===============================================.
-pilih (1-6) : input
-// bahasanya seadanya dlu aja ya, nanti gampang diubah"
-
-## 2, pilih 1
-======= Tampilkan Seluruh Data =======
-1. Tampilkan data (terkelompok tingkat kesulitan)
-2. Tampilkan data urut rating
-3. Tampilkan data urut durasi waktu
-4. Kembali
-===================================.
-pilih (1-4) : input
-
-### 2, 1, pilih 1
-SUMBER BELAJAR TERKELOMPOK TINGKAT KESULITAN
-TINGKAT KESULITAN : MUDAH
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
- 6        Matdis                      Online Course           Mudah                  3.5       17
-
-TINGKAT KESULITAN : SEDANG
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 2        AVM                         Catatan                 Sedang                 5         10
- 5        AVM                         Catatan                 Sedang                 1         50
-
-TINGKAT KESULITAN : SULIT
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
- 3        Matdis                      Online Course           Sulit                  3.5       32
-
-### 2, 1, pilih 2
-DATA SUMBER BELAJAR URUT RATING
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 5        AVM                         Catatan                 Sedang                 1         50
- 6        Matdis                      Online Course           Mudah                  3.5       17
- 3        Matdis                      Online Course           Sulit                  3.5       32
- 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
- 2        AVM                         Catatan                 Sedang                 5         10
- 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
- 
-## 2, 1, pilih 3
-DATA SUMBER BELAJAR URUT DURASI WAKTU
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 2        AVM                         Catatan                 Sedang                 5         10
- 6        Matdis                      Online Course           Mudah                  3.5       17
- 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
- 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
- 3        Matdis                      Online Course           Sulit                  3.5       32
- 5        AVM                         Catatan                 Sedang                 1         50
-
-//ATAU BISA JUGA
-## 2, 1, pilih 2 atau pilih 3
-==== Urut =====
-1. Ascending
-2. Descending
-3. Kembali
-===============
-pilih (1-3) :
-//terus lanjut kaya disebelumnya dengan tambahan tulisan " (ASCENDING) / (DESCENDING) " -> sesuai dengan input
-
-## 2, pilih 2
-DATA SUMBER BELAJAR DENGAN RATING TERTINGGI
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 2        AVM                         Catatan                 Sedang                 5         10
- 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
-
-DATA SUMBER BELAJAR DENGAN RATING TERENDAH
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 5        AVM                         Catatan                 Sedang                 1         50
-
-
-## 2, pilih 3
-DATA SUMBER BELAJAR DENGAN DURASI WAKTU TERPANJANG
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 5        AVM                         Catatan                 Sedang                 1         50
-
-DATA SUMBER BELAJAR DENGAN DURASI WAKTU TERPENDEK
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 2        AVM                         Catatan                 Sedang                 5         10
-
-
-## 2, pilih 4
-// jujur belum kepikiran
-// paling kaya kita bikin rumus nya gitu, kaya dengan rating tertinggi dan waktu terpendek
-// atau mending ga usah ya?
-
-
-## 2, pilih 5 //fitur tantangan, dipikir terakhir aja
-Berapa durasi waktu belajar yang anda miliki : input
-
-Durasi = 30
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
- 2        AVM                         Catatan                 Sedang                 5         10
- 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
- 6        Matdis                      Online Course           Mudah                  3.5       17
-
-// yang ke output cuman data yang waktu < 30
-
-
-# PILIH 3
-======= Cari Data =======
-1. Berdasarkan ID
-2. Berdasarkan Judul
-3. Berdasarkan Kategori
-4. Kembali
-=========================.
-pilih (1-4) :
-
-
-## 3, pilih 1
-ID : input
-
-ID = 3
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 3        Matdis                      Online Course           Sulit                  3.5       32
-
-
-## 3, pilih 2
-Judul : input
-
-Judul = AVM
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 2        AVM                         Catatan                 Sedang                 5         10
-
-
-## 3, pilih 3
-==== Kategori ====
-1. buku
-2. catatan
-3. tutorial
-4. video pembelajaran
-5. online course
-6. kembali
-==================.
-pilih (1-6) : input
-
-// misal input 3
-
-Kategori = Tutorial 
-========================================================================================================.
-ID        JUDUl                       KATEGORI                TINGKAT KESULITAN     RATING     WAKTU
-========================================================================================================.
- 1        Kalkulus (Limit)            Tutorial                Sulit                  4         20
- 4        Kalkulus (Limit)            Tutorial                Mudah                  5         22
+1. Audina Dwiyunita Putri (26/587248/PA/24748) — Analisis masalah, pseudocode, menu utama, & integrasi program
+2. Radithya Prama Syandana (NIM) — Struct, array, input/output, validasi, & kontrol alur
+3. Azki Azziyad (26/579227/PA/24271) — Modularisasi fungsi, perhitungan statistik, & fungsi rekursif
+4. Faiz (26/588977/PA/24860) — Algoritma sorting, searching, pengujian (test case), & debugging

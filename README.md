@@ -22,6 +22,15 @@ Proyek ini disusun untuk memenuhi Tugas Project Praktikum Pemrograman — Kelomp
 
 ---
 
+## Anggota Kelompok 5
+
+1. Audina Dwiyunita Putri (26/587248/PA/24748) — Analisis masalah, pseudocode, menu utama, & integrasi program
+2. Radithya Prama Syandana (NIM) — Struct, array, input/output, validasi, & kontrol alur
+3. Azki Azziyad (26/579227/PA/24271) — Modularisasi fungsi, perhitungan statistik, & fungsi rekursif
+4. Faiz (26/588977/PA/24860) — Algoritma sorting, searching, pengujian (test case), & debugging
+
+---
+
 ## Struktur File Proyek
 
 ```text
@@ -35,12 +44,3 @@ projek-kelompok-5/
 ├── searching.hpp         # Implementasi manual Linear Search (ID, judul, kategori, durasi)
 ├── data.txt              # File penyimpanan data sumber belajar
 └── README.md             # Dokumentasi proyek
-
----
-
-## Anggota Kelompok 5
-
-1. Audina Dwiyunita Putri (26/587248/PA/24748) — Analisis masalah, pseudocode, menu utama, & integrasi program
-2. Radithya Prama Syandana (NIM) — Struct, array, input/output, validasi, & kontrol alur
-3. Azki Azziyad (26/579227/PA/24271) — Modularisasi fungsi, perhitungan statistik, & fungsi rekursif
-4. Faiz (26/588977/PA/24860) — Algoritma sorting, searching, pengujian (test case), & debugging

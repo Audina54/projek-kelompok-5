@@ -6,6 +6,8 @@
 #include "searching.hpp"
 #include "sorting.hpp"
 
+void urut_rating (data_sumber belajar[], int n);
+void urut_waktu (data_sumber belajar[], int n);
 void tampilkan_seluruh_data (data_sumber belajar[], int n);
 void menampilkan_data_sumber (data_sumber belajar[], int n);
 void cari_data (data_sumber belajar[], int n);
@@ -50,7 +52,86 @@ int main () {
     }while (pilihan!=4);
 }
 
+void urut_rating (data_sumber belajar[], int n) {
+    int pilihan;
+    do {
+        menu_urut();
+        pilihan = baca_angka(1, 3);
+        system("cls");
+        switch (pilihan) {
+            case 1 : 
+                cout << "\nDATA SUMBER BELAJAR TERURUT RATING (ASCENDING)";
+                header();
+                bubble_ascending(belajar, n, "rating");
+                view_arr(belajar, n);
+                cout << "\nenter untuk lanjut..";
+                getch();
+                system("cls");
+                break;
 
+            case 2 : 
+                cout << "\nDATA SUMBER BELAJAR TERURUT RATING (DESCENDING)";
+                header();
+                bubble_descending(belajar, n, "rating");
+                view_arr(belajar, n);
+                cout << "\nenter untuk lanjut..";
+                getch();
+                system("cls");
+                break;
+
+            case 3 : 
+                system("cls");
+                break;
+
+            default :
+                cin.clear();
+                cin.ignore(1000, '\n');
+                break;
+
+        }
+    }while (pilihan != 3);
+}
+
+void urut_waktu (data_sumber belajar[], int n) {
+    int pilihan;
+    do {
+        menu_urut();
+        pilihan = baca_angka(1, 3);
+        system("cls");
+        switch (pilihan) {
+            case 1 : 
+                cout << "\nDATA SUMBER BELAJAR TERURUT DURASI WAKTU (ASCENDING)";
+                header();
+                bubble_ascending(belajar, n, "waktu");
+                view_arr(belajar, n);
+                cout << "\nenter untuk lanjut..";
+                getch();
+                system("cls");
+                break;
+
+            case 2 : 
+                cout << "\nDATA SUMBER BELAJAR TERURUT DURASI WAKTU (DESCENDING)";
+                header();
+                bubble_descending(belajar, n, "waktu");
+                view_arr(belajar, n);
+                cout << "\nenter untuk lanjut..";
+                getch();
+                system("cls");
+                break;
+
+            case 3 : 
+                system("cls");
+                break;
+
+            default :
+                cin.clear();
+                cin.ignore(1000, '\n');
+                break;
+
+        }
+    }while (pilihan != 3);
+
+}
 
 void tampilkan_seluruh_data (data_sumber belajar[], int n) {
     int pilihan;
@@ -78,23 +159,11 @@ void tampilkan_seluruh_data (data_sumber belajar[], int n) {
                 break;
 
             case 2 :
-                cout << "\nDATA SUMBER BELAJAR TERURUT RATING";
-                header();
-                bubble_sort(belajar, n, "rating");
-                view_arr(belajar, n);
-                cout << "\nenter untuk lanjut..";
-                getch();
-                system("cls");
+                urut_rating(belajar, n);
                 break;
 
             case 3 :
-                cout << "\nDATA SUMBER BELAJAR TERURUT DURASI WAKTU";
-                header();
-                bubble_sort(belajar, n, "waktu");
-                view_arr(belajar, n);
-                cout << "\nenter untuk lanjut..";
-                getch();
-                system("cls");
+                urut_waktu(belajar, n);
                 break;
 
             case 4 :
@@ -120,7 +189,7 @@ void menampilkan_data_sumber (data_sumber belajar[], int n) {
         cout << setprecision(3) << mean(belajar, n, "rating");
         cout << endl;
         cout << "rata-rata durasi waktu = ";
-        cout << setprecision(3) << mean(belajar, n, "waktu");
+        cout << setprecision(3) << mean(belajar, n, "waktu") << " menit";
         cout << endl;
         menu_menampilkanData();
         pilihan = baca_angka(1, 4);

@@ -39,6 +39,16 @@ void menu_tampilkan() {
 
 }
 
+void menu_urut() {
+    cout << "\n==== Urut =====\n";
+    cout << "1. Ascending\n";
+    cout << "2. Descending\n";
+    cout << "3. Kembali\n";
+    cout << "===============\n";
+    cout << "pilih (1-3) : ";
+    
+}
+
 void menu_cariData () {
     cout << "\n======= Cari Data =======\n";
     cout << "1. Berdasarkan ID\n";

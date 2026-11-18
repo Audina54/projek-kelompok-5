@@ -46,17 +46,17 @@ Proyek ini disusun untuk memenuhi Tugas Project Praktikum Pemrograman — Kelomp
 
 2. **Buka Terminal atau Command Prompt**
    Arahkan direktori kerja terminal menuju folder tempat seluruh file tersebut disimpan menggunakan perintah `cd`, misalnya:
-   ```bash
+   ```powershell
    cd path/ke/folder-proyek
 
 3. **Kompilasi Program**
    Jalankan perintah berikut untuk melakukan kompilasi kode C++ menjadi file eksekusi bernama m: main.cpp  
-   ```bash
+   ```powershell
    g++ main.cpp -o m
 
 4. **Jalankan Program**
    Setelah proses kompilasi selesai tanpa error, jalankan aplikasi dengan perintah berikut:
-   ```bash
+   ```powershell
    ./m
    (Catatan: Untuk pengguna Command Prompt di Windows, gunakan perintah m atau m.exe apabila ./m tidak dikenali).
 

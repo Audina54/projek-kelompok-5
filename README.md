@@ -42,7 +42,7 @@ Proyek ini disusun untuk memenuhi Tugas Project Praktikum Pemrograman — Kelomp
    - `calculation.hpp`
    - `sorting.hpp`
    - `searching.hpp`
-   - `data.txt` 
+   - `data.txt` (opsional; jika belum tersedia, file akan otomatis dibuat saat pertama kali menyimpan data baru)
 
 2. **Buka Terminal atau Command Prompt**
    Arahkan direktori kerja terminal menuju folder tempat seluruh file tersebut disimpan menggunakan perintah `cd`, misalnya:

@@ -18,7 +18,7 @@ Proyek ini disusun untuk memenuhi Tugas Project Praktikum Pemrograman — Kelomp
    * Mengelompokkan sumber belajar berdasarkan tingkat kesulitan (`mudah`, `sedang`, `sulit`).
    * Mengurutkan data secara *Ascending* maupun *Descending* berdasarkan **Rating** atau **Durasi Waktu** menggunakan algoritma *Bubble Sort* manual.
 5. **Pencarian Data (*Linear Search*) & Rekomendasi Durasi**
-   * Mencari sumber belajar berdasarkan **ID**, **Judul**, **Kategori**, maupun **Durasi Waktu Belajar** yang tersedia (menampilkan seluruh materi dengan estimasi waktu $\le$ waktu yang dimiliki pengguna).
+   * Mencari sumber belajar berdasarkan **ID**, **Judul**, **Kategori**, maupun **Durasi Waktu Belajar** yang tersedia (menampilkan seluruh materi dengan estimasi waktu yang dimiliki pengguna).
 
 ---
 
@@ -30,6 +30,35 @@ Proyek ini disusun untuk memenuhi Tugas Project Praktikum Pemrograman — Kelomp
 4. Faiz (26/588977/PA/24860) — Algoritma sorting, searching, pengujian (test case), & debugging
 
 ---
+
+## Cara Menjalankan Program
+
+1. **Siapkan Seluruh File dalam Satu Folder**
+   Pastikan seluruh file sumber kode dan file penyimpanan data berada di dalam satu direktori (folder) yang sama:
+   - `main.cpp`
+   - `struct.hpp`
+   - `input_output.hpp`
+   - `load_save_file.hpp`
+   - `calculation.hpp`
+   - `sorting.hpp`
+   - `searching.hpp`
+   - `data.txt` 
+
+2. **Buka Terminal atau Command Prompt**
+   Arahkan direktori kerja terminal menuju folder tempat seluruh file tersebut disimpan menggunakan perintah `cd`, misalnya:
+   ```bash
+   cd path/ke/folder-proyek
+
+3. **Kompilasi Program**
+   Jalankan perintah berikut untuk melakukan kompilasi kode C++ menjadi file eksekusi bernama m: main.cpp  
+   ```bash
+   g++ main.cpp -o m
+
+4. **Jalankan Program**
+   Setelah proses kompilasi selesai tanpa error, jalankan aplikasi dengan perintah berikut:
+   ```bash
+   ./m
+   (Catatan: Untuk pengguna Command Prompt di Windows, gunakan perintah m atau m.exe apabila ./m tidak dikenali).
 
 ## Struktur File Proyek
 
@@ -44,3 +73,6 @@ projek-kelompok-5/
 ├── searching.hpp         # Implementasi manual Linear Search (ID, judul, kategori, durasi)
 ├── data.txt              # File penyimpanan data sumber belajar
 └── README.md             # Dokumentasi proyek
+
+---
+
